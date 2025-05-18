@@ -83,8 +83,10 @@ export class LoginComponent {
       this.password &&
       this.password.valid
     ) {
-      this.authService
-        .login({ email: this.email.value, password: this.password.value })
+      this.authService.login({
+        email: this.email.value,
+        password: this.password.value,
+      });
     }
   }
 }

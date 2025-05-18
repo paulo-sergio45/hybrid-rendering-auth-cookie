@@ -5,7 +5,7 @@ import { CookieService } from 'ngx-cookie-service';
   selector: 'app-cookie-consent',
   imports: [],
   templateUrl: './cookie-consent.component.html',
-  styleUrl: './cookie-consent.component.scss'
+  styleUrl: './cookie-consent.component.scss',
 })
 export class CookieConsentComponent {
   private cookieService = inject(CookieService);
@@ -14,7 +14,15 @@ export class CookieConsentComponent {
   acceptCookies(): void {
     const expires = new Date();
     expires.setFullYear(expires.getFullYear() + 1);
-    this.cookieService.set('cookie_consent', 'true', expires, '/', '', true, 'Strict');
+    this.cookieService.set(
+      'cookie_consent',
+      'true',
+      expires,
+      '/',
+      '',
+      true,
+      'Strict'
+    );
     this.consentGiven.set(true);
   }
 }

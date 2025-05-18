@@ -15,8 +15,7 @@ export class AuthService {
 
   public login(credentials: { email: string; password: string }) {
     return this.apiService
-      .post('/login', credentials)
-      .pipe(first())
+      .post('/login', credentials).pipe(first())
       .subscribe({
         next: (response) => {
           if (response && response.token) {
@@ -31,8 +30,7 @@ export class AuthService {
 
   public logout() {
     return this.apiService
-      .post('/logout', {})
-      .pipe(first())
+      .post('/logout', {}).pipe(first())
       .subscribe({
         next: () => {
           this.router.navigate(['/login']);
@@ -45,8 +43,7 @@ export class AuthService {
 
   public register() {
     return this.apiService
-      .post('/register', {})
-      .pipe(first())
+      .post('/register', {}).pipe(first())
       .subscribe({
         next: (response) => {},
         error: () => {},
@@ -54,10 +51,7 @@ export class AuthService {
   }
 
   public isAuthenticated() {
-    return this.apiService
-      .get('/protected')
-      .pipe(first())
-
+    return this.apiService.get('/protected').pipe(first());
   }
 
   private armazenarToken(token: string): void {
@@ -69,7 +63,7 @@ export class AuthService {
       token,
       expiraEm,
       '/',
-      '', // <- aqui você pode colocar seu domínio se quiser restringir
+      '', //  dominio
       true, // Secure
       'Strict' // SameSite
     );

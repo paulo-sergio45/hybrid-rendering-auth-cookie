@@ -10,20 +10,14 @@ import { FooterComponent } from '../../component/footer/footer.component';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  imports: [
-    MatButtonModule,
-
-  ],
+  imports: [MatButtonModule],
 })
 export class HomeComponent {
   private readonly authService = inject(AuthService);
-  private readonly router = inject(Router);
 
-
-  constructor() {
-  }
+  constructor() {}
 
   logout() {
-    this.authService.logout()
+    this.authService.logout();
   }
 }

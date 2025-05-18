@@ -4,8 +4,6 @@ import { Component } from '@angular/core';
   selector: 'app-users',
   imports: [],
   templateUrl: './users.component.html',
-  styleUrl: './users.component.scss'
+  styleUrl: './users.component.scss',
 })
-export class UsersComponent {
-
-}
+export class UsersComponent {}
