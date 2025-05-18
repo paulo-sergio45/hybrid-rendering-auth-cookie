@@ -1,0 +1,21 @@
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+}
+
+.app-footer {
+  height: 50px;
+
+  background-color: #f1f1f1;
+}
+
+.app-contend {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
+}

@@ -1,0 +1,10 @@
+ @if (!consentGiven()) {
+<div class="cookie-banner" >
+  <p>
+    Usamos cookies essenciais para autenticação e funcionamento básico do site.
+    Ao continuar, você concorda com nosso uso.
+    <a href="/politica-de-privacidade" target="_blank">Saiba mais</a>.
+  </p>
+  <button (click)="acceptCookies()">Aceitar</button>
+</div>
+ }
