@@ -1,5 +1,5 @@
-import { Component, inject, signal } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
+import { Component, inject, signal, OnInit } from '@angular/core';
+import { CookieService } from '../../service/cookie.service';
 
 @Component({
   selector: 'app-cookie-consent',
@@ -8,21 +8,17 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrl: './cookie-consent.component.scss',
 })
 export class CookieConsentComponent {
-  private cookieService = inject(CookieService);
-  consentGiven = signal(this.cookieService.check('cookie_consent'));
+  protected cookieService = inject(CookieService);
+  public consentGiven = signal<boolean>(true);
+
+  constructor() {
+    this.consentGiven.set(this.cookieService.checkCookie('cookie_consent'));
+  }
 
   acceptCookies(): void {
     const expires = new Date();
     expires.setFullYear(expires.getFullYear() + 1);
-    this.cookieService.set(
-      'cookie_consent',
-      'true',
-      expires,
-      '/',
-      '',
-      true,
-      'Strict'
-    );
+    this.cookieService.setCookie('cookie_consent', 'true', expires);
     this.consentGiven.set(true);
   }
 }

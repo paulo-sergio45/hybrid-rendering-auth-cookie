@@ -14,14 +14,13 @@ export const routes: Routes = [
     redirectTo: '/home',
   },
   {
-    path: 'home',
-    component: HomeComponent,
-    // canActivate: [AuthGuard],
-  },
-  {
     path: 'login',
     component: LoginComponent,
-    //canActivate: [AuthGuard],
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'dashboard',
@@ -31,7 +30,7 @@ export const routes: Routes = [
       { path: 'users', component: UsersComponent },
       { path: '', redirectTo: 'reports', pathMatch: 'full' },
     ],
-    //canActivate: [canActivate],
+    canActivate: [AuthGuard],
   },
   { path: '**', component: PageNotFoundComponent },
 ];

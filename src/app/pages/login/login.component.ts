@@ -10,7 +10,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { AuthService } from '../../service/auth.service';
-import { Router } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({

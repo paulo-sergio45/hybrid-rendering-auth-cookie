@@ -13,11 +13,8 @@ import { FooterComponent } from '../../component/footer/footer.component';
   imports: [MatButtonModule],
 })
 export class HomeComponent {
-  private readonly authService = inject(AuthService);
 
   constructor() {}
 
-  logout() {
-    this.authService.logout();
-  }
+
 }
