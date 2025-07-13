@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './component/footer/footer.component';
 import { HeaderComponent } from './component/header/header.component';
 import { CookieConsentComponent } from './component/cookie-consent/cookie-consent.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',

@@ -25,11 +25,12 @@ export class AuthService {
       .pipe(first())
       .subscribe({
         next: (response) => {
-          if (response && response?.token) {
+          debugger;
+          if (response && response?.user && response?.token) {
             this.currentUserSig.set(response.user);
-            this.armazenarToken(response.token);
             this.currentUserToken.set(response.token);
             this.isAuthenticated.set(true);
+             this.armazenarToken(response.token);
             this.router.navigate(['/home']);
           }
         },
